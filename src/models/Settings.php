@@ -62,7 +62,8 @@ class Settings extends Model
         return [
             ['buildHooks', 'default', 'value' => [[
                 'name' => 'default',
-                'url' => 'https://api.netlify.com/build_hooks/...'
+                'url' => 'https://api.netlify.com/build_hooks/...',
+                'badge' => ''
             ]]],
         ];
     }
