@@ -36,7 +36,7 @@
             {{ "Deploy"|t }} {{ buildHook['name'] }}
           </button>
           {% if buildHook['badge'] | length %}
-            <div>{{ buildHook['badge'] }}</div>
+            <div><img alt="Badge" src="{{ buildHook['badge'] }}" /></div>
           {% endif %}
         </div>
       {% endfor %}
