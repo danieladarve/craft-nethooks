@@ -36,5 +36,11 @@
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/JungleMinds/Craft_NetHooks/master/CHANGELOG.md",
         "class": "jungleminds\\nethooks\\Nethooks"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
     }
 }
