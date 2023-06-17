@@ -16,3 +16,16 @@
 #content .nethooks .hooks .hook { margin-bottom: 5px; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: start; }
 #content .nethooks .hooks .hook img { margin-left: 4px; }
 #content .nethooks .hooks .hook button:disabled { pointer-events: none; }
+#content .nethooks .hooks .btn.submit {
+    height: 29px;
+}
+#content .nethooks .flex { display: -ms-flexbox; display: flex; }
+#content .nethooks .badge-image img {
+    margin: 0 !important;
+    min-width: 174px;
+}
+#content .nethooks .legend {
+    font-weight: bold;
+    color: #596673;
+    margin-bottom: 4px;
+}

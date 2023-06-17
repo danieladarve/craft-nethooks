@@ -60,11 +60,15 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['buildHooks', 'default', 'value' => [[
-                'name' => 'default',
-                'url' => 'https://api.netlify.com/build_hooks/...',
-                'badge' => ''
-            ]]],
+            ['buildHooks', 'default', 'value' =>
+                [
+                    [
+                        'name' => 'default',
+                        'url' => 'https://api.netlify.com/build_hooks/...',
+                        'badge' => ''
+                    ]
+                ]
+            ],
         ];
     }
 }

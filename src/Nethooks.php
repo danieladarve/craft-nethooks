@@ -10,16 +10,16 @@
 
 namespace jungleminds\nethooks;
 
+use craft\web\twig\variables\CraftVariable;
 use jungleminds\nethooks\models\Settings;
 use jungleminds\nethooks\utilities\NethooksUtility;
 
 use Craft;
 use craft\base\Plugin;
-use craft\services\Plugins;
-use craft\events\PluginEvent;
 use craft\services\Utilities;
 use craft\events\RegisterComponentTypesEvent;
 
+use jungleminds\nethooks\web\twig\variables\NethooksVariable;
 use yii\base\Event;
 
 /**
@@ -67,14 +67,11 @@ class Nethooks extends Plugin
             }
         );
 
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                }
-            }
-        );
+        Event::on(CraftVariable::class, CraftVariable::EVENT_INIT, function(Event $event) {
+            /** @var CraftVariable $variable */
+            $variable = $event->sender;
+            $variable->set('nethooks', NethooksVariable::class);
+        });
 
         Craft::info(
             Craft::t(

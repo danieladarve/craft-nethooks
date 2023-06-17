@@ -28,15 +28,21 @@
   {% else %}
     <div class="hooks">
       {% for i, buildHook in buildHooks %}
-        <div class="hook">
-          <button
+        <div class="hook flex">
+          <div>
+            <div class="legend">Action</div>
+            <div><button
             class="btn icon submit"
             data-build-hook="{{ buildHook['url'] }}"
           >
             {{ "Deploy"|t }} {{ buildHook['name'] }}
-          </button>
+              </button></div>
+          </div>
           {% if buildHook['badge'] | length %}
-            <div><img alt="Badge" src="{{ buildHook['badge'] }}" /></div>
+            <div>
+              <div class="legend">Deployment Status</div>
+              <div class="badge-image">{{ craft.nethooks.getBadge(buildHook['badge']) | raw }}</div>
+            </div>
           {% endif %}
         </div>
       {% endfor %}
